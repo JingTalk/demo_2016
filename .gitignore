@@ -28,5 +28,3 @@ proguard/
 
 #IntelliJ IDEA
 .idea/
-
-.idea/workspace.xml
