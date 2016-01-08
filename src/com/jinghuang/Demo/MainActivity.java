@@ -1,10 +1,10 @@
-package com.jinghuang.Demo;
+package com.jinghuang.demo;
 
 import android.app.Activity;
 import android.os.Bundle;
 
 /**
- * Created by hakimhuang on 2016/1/8.
+ * Created by jing on 2016/1/8.
  */
 public class MainActivity extends Activity {
     @Override
