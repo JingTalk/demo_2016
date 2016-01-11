@@ -28,3 +28,9 @@ proguard/
 
 #IntelliJ IDEA
 .idea/
+
+#eclipse
+.classpath
+.project
+.settings
+project.properties
