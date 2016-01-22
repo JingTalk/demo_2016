@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, Lop!</string>
+    <string name="app_name">JingDS</string>
+    <string name="mortgage_lable">房贷计算</string>
+    <string name="aera">总面积:</string>
+    <string name="total_prices">现总价:</string>
+    <string name="unit_prices">单价</string>
+    <string name="down_payment">首付</string>
+    <string name="commission_charge">手续费:</string>
+    <string name="month_interest">月利息:</string>
+    <string name="calculate">计算</string>
+    <string name="unitPriceIncrease">单价增至:</string>
+	<string name="totalPriceIncrease">总价增至:</string>
+	<string name="unitPriceIncreasePercent">单价增幅比:</string>
+	<string name="totalPriceIncreasePercent">总价增幅比:</string>
+	<string name="pay_back">二年回报:</string>
+	<string name="finalUnitPrice">最终单价:</string>
+	<string name="finalTotalPrice">最终总价:</string>
+
+</resources>
