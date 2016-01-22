@@ -15,6 +15,7 @@
 	<string name="unitPriceIncreasePercent">单价增幅比:</string>
 	<string name="totalPriceIncreasePercent">总价增幅比:</string>
 	<string name="pay_back">二年回报:</string>
+	<string name="twoyear_interest">二年利息:</string>
 	<string name="finalUnitPrice">最终单价:</string>
 	<string name="finalTotalPrice">最终总价:</string>
 

@@ -34,3 +34,7 @@ proguard/
 .project
 .settings
 project.properties
+
+#idea
+*.iml
+

@@ -38,20 +38,22 @@ public class MortgageActivity extends Activity implements View.OnClickListener{
     private TextView mTipsTV;
     private TextView mFinalUnitPriceTV;
     private TextView mFinalTotalPriceTV;
+    private TextView mTwoyearInterestTV;
 
     private Button mCaluBtn1;
     private Button mCaluBtn2;
 
-    private double mTotalPrice;                 // 总价
-    private double mTotalAera;                  // 面积
-    private double mMonthInterest;              // 月供利息
+    private double mTotalPrice;                     // 总价
+    private double mTotalAera;                      // 面积
+    private double mMonthInterest;                  // 月供利息
     private double mUnitPrices = 0;                 // 单价
-    private double mDownPayment;                // 首付
-    private double mCommissionCharge;           //手续费
-    private double mFinalUnitPrice;          //增幅后的单价
-    private double mUnitPriceIncreasePercent;   //单价增幅比例
-    private double mFinalTotalPrice;         //增幅后的总价
-    private double mTotalPriceIncreasePercent;  //总价增幅比例
+    private double mDownPayment;                    // 首付
+    private double mCommissionCharge;               //手续费
+    private double mFinalUnitPrice;                 //增幅后的单价
+    private double mUnitPriceIncreasePercent;       //单价增幅比例
+    private double mFinalTotalPrice;                //增幅后的总价
+    private double mTotalPriceIncreasePercent;      //总价增幅比例
+    private double mTwoyearInterest;               //两年利息
 
     private double mPayBack;
 
@@ -82,6 +84,7 @@ public class MortgageActivity extends Activity implements View.OnClickListener{
         mTipsTV = (TextView) findViewById(R.id.tips);
         mFinalUnitPriceTV = (TextView) findViewById(R.id.finalUnitPrice);
         mFinalTotalPriceTV = (TextView) findViewById(R.id.finalTotalPrice);
+        mTwoyearInterestTV = (TextView) findViewById(R.id.twoyear_interest);
 
         mCaluBtn1 = (Button) findViewById(R.id.calculate1);
         mCaluBtn2 = (Button) findViewById(R.id.calculate2);
@@ -148,16 +151,7 @@ public class MortgageActivity extends Activity implements View.OnClickListener{
         mFinalTotalPrice = get2Double(mFinalUnitPrice * mTotalAera);
         mFinalTotalPriceTV.setText(String.valueOf(mFinalTotalPrice));
 
-        mUnitPriceIncreasePercent = get2Double((mFinalUnitPrice - mUnitPrices) / mUnitPrices * 100) ;
-        mUnitPriceIncreasePercentTV.setText(String.valueOf(mUnitPriceIncreasePercent) + "%");
-
-        mTotalPriceIncreasePercent = get2Double((mFinalTotalPrice - mTotalPrice) / mTotalPrice  * 100);
-        mTotalPriceIncreasePercentTV.setText(String.valueOf(mTotalPriceIncreasePercent) + "%");
-
-        mPayBack = get2Double(mFinalTotalPrice - mTotalPrice - mMonthInterest * 24 - mCommissionCharge);
-        mPayBackTV.setText(String.valueOf(mPayBack));
-
-        makeTips();
+        calculateFinalData();
     }
 
     private void calculateMethod2() {
@@ -181,17 +175,24 @@ public class MortgageActivity extends Activity implements View.OnClickListener{
         mFinalUnitPrice = get2Double(mFinalTotalPrice / mTotalAera);
         mFinalUnitPriceTV.setText(String.valueOf(mFinalUnitPrice));
 
+        calculateFinalData();
+    }
+
+    private void calculateFinalData() {
+
         mUnitPriceIncreasePercent = get2Double((mFinalUnitPrice / mUnitPrices - 1) * 100) ;
         mUnitPriceIncreasePercentTV.setText(String.valueOf(mUnitPriceIncreasePercent) + "%");
 
         mTotalPriceIncreasePercent = get2Double((mFinalTotalPrice / mTotalPrice - 1) * 100 );
         mTotalPriceIncreasePercentTV.setText(String.valueOf(mTotalPriceIncreasePercent) + "%");
 
-        mPayBack = get2Double(mFinalTotalPrice - mTotalPrice - mMonthInterest * 24 - mCommissionCharge);
+        mTwoyearInterest = get2Double(mMonthInterest * 24);
+        mTwoyearInterestTV.setText(String.valueOf(mTwoyearInterest));
+
+        mPayBack = get2Double(mFinalTotalPrice - mTotalPrice - mTwoyearInterest - mCommissionCharge);
         mPayBackTV.setText(String.valueOf(mPayBack));
 
         makeTips();
-
     }
 
 	public static double get2Double(double a) {
