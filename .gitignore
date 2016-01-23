@@ -35,6 +35,6 @@ proguard/
 .settings
 
 
-#idea
-*.iml
+
+
 
