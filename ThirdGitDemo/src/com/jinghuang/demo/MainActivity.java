@@ -1,8 +1,6 @@
 package com.jinghuang.demo;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -10,7 +8,9 @@ import android.view.WindowManager;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.jeremyfeinstein.slidingmenu.lib.app.SlidingActivity;
-import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
+import com.jinghuang.demo.chat.BarChartActivity;
+import com.jinghuang.demo.chat.ChatActivity;
+import com.jinghuang.demo.chat.LineChartActivity1;
 import com.jinghuang.demo.mortgage.MortgageActivity;
 
 /**
@@ -24,9 +24,11 @@ public class MainActivity extends SlidingActivity /*SlidingFragmentActivity*/ {
 		
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity001_main);
 
 		initLeftMenu();
+
+        startActivityForTest();
 	}
 
 	/*private void initLeftMenuFragment() {
@@ -71,5 +73,15 @@ public class MainActivity extends SlidingActivity /*SlidingFragmentActivity*/ {
     public void showMortgage(View view) {
         Intent target = new Intent(this, MortgageActivity.class);
         startActivity(target);
+    }
+
+    public void showChart(View view) {
+        Intent target = new Intent(this, ChatActivity.class);
+        startActivity(target);
+    }
+
+    private void startActivityForTest() {
+        Intent i = new Intent(MainActivity.this, LineChartActivity1.class);
+        startActivity(i);
     }
 }

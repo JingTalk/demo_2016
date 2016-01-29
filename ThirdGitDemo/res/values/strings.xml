@@ -19,4 +19,7 @@
 	<string name="finalUnitPrice">最终单价:</string>
 	<string name="finalTotalPrice">最终总价:</string>
 
+
+	<string name="action_settings">Settings </string>
+
 </resources>

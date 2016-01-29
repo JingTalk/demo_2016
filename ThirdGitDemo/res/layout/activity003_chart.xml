@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+				android:orientation="vertical">
+
+	<Button android:id="@+id/btn_pie"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="PieChat"/>
+
+	<Button android:id="@+id/btn_line1"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="LineChat1"/>
+
+	<Button android:id="@+id/btn_line2"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="LineChat Double"/>
+
+	<Button android:id="@+id/btn_lineColor"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="LineChat Color"/>
+
+	<Button android:id="@+id/btn_bar"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="BarChart"/>
+
+	<Button android:id="@+id/btn_barHorizontal"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="BarChart Horizontal"/>
+
+	<Button android:id="@+id/btn_barAnother"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="BarChart Another"/>
+
+	<Button android:id="@+id/btn_barMultiDataset"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="BarChart MultiDataset"/>
+
+
+</LinearLayout>
